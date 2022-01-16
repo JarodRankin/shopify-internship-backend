@@ -56,6 +56,35 @@ class InventoryController < ActionController::Base
 		render json: sku
 	end
 
+	def update_sku
+		sku_json = params[:sku]
+		token = sku_json[:token]
+
+		if !token then
+			# TODO: - Render error
+			head :bad_request
+			return
+		end
+
+		sku_to_update = sku_with_token(token)
+
+		if !sku_to_update then
+			# TODO: - Render error
+			head :bad_request
+			return
+		end
+
+		# TODO: - Figure out why I cant create a Sku with the hash in params
+		sku_to_update.update(
+			:description => sku_json[:description] ? sku_json[:description] : sku_to_update.description , 
+			:price_cents => sku_json[:price_cents] ? sku_json[:price_cents] : sku_to_update.price_cents, 
+			:quantity => sku_json[:quantity] ? sku_json[:quantity] : sku_to_update.quantity
+		)
+
+		render json: sku_to_update
+	end
+
+
 	private
 
 	# returns a unique sku by token
