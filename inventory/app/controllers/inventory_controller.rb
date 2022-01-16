@@ -1,7 +1,7 @@
 require 'uuidtools'
 
 class InventoryController < ActionController::Base
-
+	
 	# return a list of all sku's
 	# @return [Sku]
 	def all
@@ -31,7 +31,11 @@ class InventoryController < ActionController::Base
 		sku_json = params[:sku]
 
 		# Check if the sku parameter is provided
-		if !sku_json then head :bad_request end
+		if !sku_json then
+			# TODO: - Render error
+			head :bad_request
+			return
+		end
 
 		# Pull the optional paramter token out of params
 		token = sku_json[:token]
@@ -40,8 +44,13 @@ class InventoryController < ActionController::Base
 		if !token then token = token = UUIDTools::UUID.timestamp_create.to_s[0..7] end
 		
 		# Try to find an existing Sku with the same token prior to creating
-		if sku_with_token(token) then head :bad_request end
+		if sku_with_token(token) then
+			# TODO: - Render error
+			head :bad_request
+			return
+		end
 
+		# TODO: - Figure out why I cant create a Sku with the hash in params
 		sku = Sku.create(:token => token, :description => sku_json[:description], :price_cents => sku_json[:price_cents], :quantity => sku_json[:quantity])
 
 		render json: sku
