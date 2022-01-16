@@ -1,0 +1,546 @@
+  [1m[35m (49.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-16 18:45:08.598490"], ["updated_at", "2022-01-16 18:45:08.598490"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:45:33 -0500
+  [1m[35m (4.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (uninitialized constant InventoryController
+
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+
+            raise MissingController.new(error.message, error.name)
+            ^^^^^):
+  
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:47:00 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 15ms (ActiveRecord: 0.0ms | Allocations: 4076)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:47:26 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 93)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:47:52 -0500
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 6ms (ActiveRecord: 0.0ms | Allocations: 3228)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:53:19 -0500
+  [1m[35m (5.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 7ms (ActiveRecord: 0.0ms | Allocations: 3227)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:56:20 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 93)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:56:35 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 82)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:57:12 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 82)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 13:57:37 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 81)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:00:33 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 1ms (Allocations: 80)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:00:46 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms | Allocations: 3228)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:05:28 -0500
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 500 Internal Server Error in 62ms (ActiveRecord: 0.0ms | Allocations: 3585)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/inventory_controller.rb:58:in `sku_with_token'
+app/controllers/inventory_controller.rb:51:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:05:59 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 500 Internal Server Error in 1ms (Allocations: 254)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/inventory_controller.rb:58:in `sku_with_token'
+app/controllers/inventory_controller.rb:51:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:07:39 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 500 Internal Server Error in 1ms (Allocations: 245)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/inventory_controller.rb:53:in `sku_with_token'
+app/controllers/inventory_controller.rb:43:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:08:18 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 500 Internal Server Error in 51ms (ActiveRecord: 0.2ms | Allocations: 4609)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'skus'):
+  
+app/controllers/inventory_controller.rb:54:in `sku_with_token'
+app/controllers/inventory_controller.rb:43:in `new_sku'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:08:39 -0500
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 0.2ms | Allocations: 4566)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'skus'):
+  
+app/controllers/inventory_controller.rb:54:in `sku_with_token'
+app/controllers/inventory_controller.rb:43:in `new_sku'
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (0)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-16 19:09:26.894148"], ["updated_at", "2022-01-16 19:09:26.894148"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.3ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-01-16 19:09:26.900053"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "c6f775aee5e9671d6414149b740db5b753a2a120"], ["created_at", "2022-01-16 19:09:26.905078"], ["updated_at", "2022-01-16 19:09:26.905078"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateSkus (20220116191240)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "skus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar, "description" varchar, "quantity" integer, "price_cents" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20220116191240"]]
+  [1m[36mTRANSACTION (2.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:12:55 -0500
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[36mSku Load (0.7ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:54:in `sku_with_token'
+Completed 500 Internal Server Error in 84ms (ActiveRecord: 1.7ms | Allocations: 13954)
+
+
+  
+ActiveModel::ForbiddenAttributesError (ActiveModel::ForbiddenAttributesError):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:14:47 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.3ms | Allocations: 2837)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:16:17 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+  [1m[36mSku Load (1.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 2.5ms | Allocations: 2810)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:18:11 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+  [1m[36mSku Load (0.5ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 1.2ms | Allocations: 2808)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:18:37 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+  [1m[36mSku Load (0.7ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 1.5ms | Allocations: 2811)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:46:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:18:44 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 54ms (ActiveRecord: 1.0ms | Allocations: 6501)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:46:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:19:18 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.3ms | Allocations: 2831)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:21:09 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+  [1m[36mSku Load (0.5ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:56:in `sku_with_token'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.2ms | Allocations: 2876)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:45:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:22:12 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+  [1m[36mSku Load (0.5ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 21ms (ActiveRecord: 1.4ms | Allocations: 10322)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:46:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:22:56 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.6ms | Allocations: 4283)
+
+
+  
+JSON::ParserError (859: unexpected token at '{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}'):
+  
+app/controllers/inventory_controller.rb:46:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:23:42 -0500
+  [1m[35m (1.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:57:in `sku_with_token'
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 1.7ms | Allocations: 13938)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/sku.rb:13:in `attributes'
+app/controllers/inventory_controller.rb:46:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:24:17 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:58:in `sku_with_token'
+  [1m[36mSku Load (0.5ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:58:in `sku_with_token'
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 1.4ms | Allocations: 4460)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/models/sku.rb:13:in `attributes'
+app/controllers/inventory_controller.rb:47:in `new_sku'
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:28:27 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:58:in `sku_with_token'
+  [1m[36mSku Load (0.6ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:58:in `sku_with_token'
+Completed 500 Internal Server Error in 20ms (ActiveRecord: 3.6ms | Allocations: 4498)
+
+
+  
+TypeError (no implicit conversion of ActionController::Parameters into String):
+  
+app/controllers/inventory_controller.rb:47:in `new_sku'
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.9ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.3ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.4ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.4ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.3ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+  [1m[36mSku Load (0.1ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.3ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? AND "skus"."description" = ? AND "skus"."quantity" = ? AND "skus"."price_cents" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["description", "Foo foo"], ["quantity", 1], ["price_cents", 1000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.3ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? AND "skus"."description" = ? AND "skus"."quantity" = ? AND "skus"."price_cents" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["description", "Foo foo"], ["quantity", 1], ["price_cents", 1000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.4ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? AND "skus"."description" = ? AND "skus"."quantity" = ? AND "skus"."price_cents" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["description", "Foo foo"], ["quantity", 1], ["price_cents", 1000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.2ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "price_cents", "quantity") VALUES (?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["price_cents", nil], ["quantity", nil]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "skus"[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "skus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar, "description" varchar, "quantity" integer, "price_cents" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220116191240)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-16 19:37:57.136071"], ["updated_at", "2022-01-16 19:37:57.136071"]]
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "568b41556f01101d9e09a97c4556b21e60e8a6ad"], ["created_at", "2022-01-16 19:37:57.153607"], ["updated_at", "2022-01-16 19:37:57.153607"]]
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "skus"[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "skus" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "token" varchar, "description" varchar, "quantity" integer, "price_cents" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (6.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20220116191240)[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2022-01-16 19:37:57.213827"], ["updated_at", "2022-01-16 19:37:57.213827"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (0.9ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2022-01-16 19:37:57.221987"], ["key", "environment"]]
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "568b41556f01101d9e09a97c4556b21e60e8a6ad"], ["created_at", "2022-01-16 19:37:57.229095"], ["updated_at", "2022-01-16 19:37:57.229095"]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? AND "skus"."description" = ? AND "skus"."quantity" = ? AND "skus"."price_cents" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["description", "Foo foo"], ["quantity", 1], ["price_cents", 1000], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mSku Create (0.6ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "quantity", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["quantity", nil], ["price_cents", nil], ["created_at", "2022-01-16 19:39:07.106292"], ["updated_at", "2022-01-16 19:39:07.106292"]]
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mSku Load (2.0ms)[0m  [1m[34mSELECT "skus".* FROM "skus" ORDER BY "skus"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" ORDER BY "skus"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSku Load (0.1ms)[0m  [1m[34mSELECT "skus".* FROM "skus" ORDER BY "skus"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mSku Load (0.3ms)[0m  [1m[34mSELECT "skus".* FROM "skus" ORDER BY "skus"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:45:05 -0500
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[36mSku Load (0.3ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:55:in `sku_with_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mSku Create (0.4ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "quantity", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["quantity", nil], ["price_cents", nil], ["created_at", "2022-01-16 19:45:05.478270"], ["updated_at", "2022-01-16 19:45:05.478270"]]
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mTRANSACTION (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+Completed 200 OK in 80ms (Views: 1.5ms | ActiveRecord: 2.9ms | Allocations: 16626)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSku Load (0.1ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+Started GET "/inventory/all" for 127.0.0.1 at 2022-01-16 14:46:21 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Error occurred while parsing request parameters.
+Contents:
+
+{
+    "sku": {
+        "token": 
+        "description": "Samsung Fold: Green",
+        "price_cents": 15000,
+        "quantity": 0
+    }
+}
+Processing by InventoryController#all as */*
+  [1m[36mSku Load (0.3ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+  ↳ app/controllers/inventory_controller.rb:9:in `all'
+Completed 200 OK in 21ms (Views: 10.2ms | ActiveRecord: 1.2ms | Allocations: 13358)
+
+
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:49:18 -0500
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"token"=>"[FILTERED]", "description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"token"=>"[FILTERED]", "description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/inventory_controller.rb:55:in `sku_with_token'
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:55:in `sku_with_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mSku Create (0.5ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "quantity", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", nil], ["quantity", nil], ["price_cents", nil], ["created_at", "2022-01-16 19:49:18.637041"], ["updated_at", "2022-01-16 19:49:18.637041"]]
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mTRANSACTION (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+Completed 200 OK in 17ms (Views: 0.3ms | ActiveRecord: 2.5ms | Allocations: 7415)
+
+
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSku Load (0.2ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
+Started POST "/inventory/sku" for 127.0.0.1 at 2022-01-16 14:50:46 -0500
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by InventoryController#new_sku as */*
+  Parameters: {"sku"=>{"token"=>"[FILTERED]", "description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}, "inventory"=>{"sku"=>{"token"=>"[FILTERED]", "description"=>"Samsung Fold: Green", "price_cents"=>15000, "quantity"=>0}}}
+  [1m[36mSku Load (0.5ms)[0m  [1m[34mSELECT "skus".* FROM "skus" WHERE "skus"."token" = ? LIMIT ?[0m  [["token", "[FILTERED]"], ["LIMIT", 1]]
+  ↳ app/controllers/inventory_controller.rb:55:in `sku_with_token'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mSku Create (0.8ms)[0m  [1m[32mINSERT INTO "skus" ("token", "description", "quantity", "price_cents", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["token", "[FILTERED]"], ["description", "Samsung Fold: Green"], ["quantity", 0], ["price_cents", 15000], ["created_at", "2022-01-16 19:50:46.894104"], ["updated_at", "2022-01-16 19:50:46.894104"]]
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/inventory_controller.rb:45:in `new_sku'
+Completed 200 OK in 26ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 16279)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mSku Load (0.3ms)[0m  [1m[34mSELECT "skus".* FROM "skus"[0m
