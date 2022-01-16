@@ -1,6 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
-  # Defines the root path route ("/")
-  # root "articles#index"
+  Rails.application.routes.draw do
+
+    get 'inventory/all', to: 'inventory#all'
+    get 'inventory/sku/:token', to: 'inventory#find_sku'
+    post 'inventory/sku', to: 'inventory#new_sku'
+
+  end
+
 end
