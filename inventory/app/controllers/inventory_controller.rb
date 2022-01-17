@@ -18,7 +18,7 @@ class InventoryController < ApplicationController
 		if sku && sku.valid?
 			render json: sku
 		else
-			head :no_content
+			render json: Error.new('Sku not found', :no_content), :status => :no_content
 		end
 
 	end
@@ -35,13 +35,20 @@ class InventoryController < ApplicationController
 		else
 			token = sku_json[:token]
 
-			if !token then token = token = UUIDTools::UUID.timestamp_create.to_s[0..7] end
+			if !token
+				token = token = UUIDTools::UUID.timestamp_create.to_s[0..7]
+			end
 
-			if sku_with_token(token) then
+			if sku_with_token(token)
 				render json: Error.new('Sku already exists for provided token', :bad_request), :status => :bad_request
 			else
 				# TODO: - Figure out why I cant create a Sku with the hash in params
-				sku = Sku.create(:token => token, :description => sku_json[:description], :price_cents => sku_json[:price_cents], :quantity => sku_json[:quantity])
+				sku = Sku.create(
+					:token => token,
+					:description => sku_json[:description],
+					:price_cents => sku_json[:price_cents],
+					:quantity => sku_json[:quantity]
+				)
 				render json: sku
 			end
 
@@ -53,17 +60,15 @@ class InventoryController < ApplicationController
 		sku_json = params[:sku]
 		token = sku_json[:token]
 
-		if !token then
-			# TODO: - Render error
-			head :bad_request
+		if !token
+			render json: Error.new('Missing parameter \"token\"', :bad_request), :status => :bad_request
 			return
 		end
 
 		sku_to_update = sku_with_token(token)
 
-		if !sku_to_update then
-			# TODO: - Render error
-			head :bad_request
+		if !sku_to_update
+			render json: Error.new('Sku not found for provided token"', :bad_request), :status => :bad_request
 			return
 		end
 
