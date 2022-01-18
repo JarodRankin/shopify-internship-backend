@@ -20,13 +20,5 @@ ActiveRecord::Schema.define(version: 2022_01_16_191240) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
-  create_table "deleted", force: :cascade do |t|
-    t.string "token"
-    t.string "description"
-    t.integer "quantity"
-    t.integer "price_cents"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
 
 end
