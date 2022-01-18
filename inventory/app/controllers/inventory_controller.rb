@@ -103,10 +103,45 @@ class InventoryController < ApplicationController
 			return
 		end
 
-		# TODO: - Figure out why I cant create a Sku with the hash in params
+		sku = Deleted.create(
+					:token => sku_to_update.token,
+					:description => sku_to_update.description,
+					:price_cents => sku_to_update.price_cents,
+					:quantity => sku_to_update.quantity
+				)
+
 		sku_to_update.delete()
 
 		render status: 200, json: ''
+	end
+
+	# Adds the deleted Sku back to the database
+	# @parameter :sku => JSON Representation of a Sku
+	# @return Sku
+	def undo_delete
+		sku_json = params[:deleted]
+		token = sku_json[:token]
+
+		if !token
+			render json: Error.new('Missing parameter \"token\"', :bad_request), :status => :bad_request
+			return
+		end
+
+		sku_to_update = sku_with_token(token)
+
+		if !sku_to_update
+			render json: Error.new('Sku not found for provided token"', :bad_request), :status => :bad_request
+			return
+		end
+
+		sku = Sku.create(
+					:token => token,
+					:description => sku_json[:description],
+					:price_cents => sku_json[:price_cents],
+					:quantity => sku_json[:quantity]
+				)
+		render json: sku
+
 	end
 
 	private
