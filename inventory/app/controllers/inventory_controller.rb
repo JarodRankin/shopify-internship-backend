@@ -56,6 +56,9 @@ class InventoryController < ApplicationController
 
 	end
 
+	# Edits any existing sku however the user pleases.
+	# @parameter :sku => JSON Representation of a Sku
+	# @return Sku
 	def update_sku
 		sku_json = params[:sku]
 		token = sku_json[:token]
@@ -82,6 +85,29 @@ class InventoryController < ApplicationController
 		render json: sku_to_update
 	end
 
+	# Deletes any existing sku however the user pleases.
+	# @parameter :sku => JSON Representation of a Sku
+	def delete_sku
+		sku_json = params[:sku]
+		token = sku_json[:token]
+
+		if !token
+			render json: Error.new('Missing parameter \"token\"', :bad_request), :status => :bad_request
+			return
+		end
+
+		sku_to_update = sku_with_token(token)
+
+		if !sku_to_update
+			render json: Error.new('Sku not found for provided token"', :bad_request), :status => :bad_request
+			return
+		end
+
+		# TODO: - Figure out why I cant create a Sku with the hash in params
+		sku_to_update.delete()
+
+		render status: 200, json: ''
+	end
 
 	private
 
