@@ -5,7 +5,6 @@ Rails.application.routes.draw do
   post 'inventory/sku', to: 'inventory#new_sku'
   patch 'inventory/sku', to: 'inventory#update_sku'
   delete 'inventory/sku', to: 'inventory#delete_sku'
-  post 'inventory/delete', to: 'inventory#delete_sku'
-  delete 'inventory/delete', to: 'inventory#undo_delete'
+  post 'inventory/sku/recover', to: 'inventory#undo_delete'
 
 end
