@@ -10,9 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_01_16_191240) do
+ActiveRecord::Schema.define(version: 2022_01_19_004113) do
 
-  create_table "skus", force: :cascade do |t|
+  create_table "deleteds", force: :cascade do |t|
     t.string "token"
     t.string "description"
     t.integer "quantity"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2022_01_16_191240) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "deleted", force: :cascade do |t|
+  create_table "skus", force: :cascade do |t|
     t.string "token"
     t.string "description"
     t.integer "quantity"
