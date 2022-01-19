@@ -103,7 +103,7 @@ class InventoryController < ApplicationController
 			return
 		end
 
-		sku_to_update = sku_with_token(@token)
+		sku_to_update = sku_with_token_del(@token)
 
 		if !sku_to_update
 			render json: Error.new('Sku not found for provided token"', :bad_request), :status => :bad_request
@@ -116,6 +116,8 @@ class InventoryController < ApplicationController
 			:price_cents => sku_json[:price_cents],
 			:quantity => sku_json[:quantity]
 		)
+		sku_to_update.delete()
+		
 		render json: sku
 
 	end
@@ -124,6 +126,10 @@ class InventoryController < ApplicationController
 
 	def sku_with_token(token)
 		Sku.find_by(token: token)
+	end
+
+	def sku_with_token_del(token)
+		Deleted.find_by(token: token)
 	end
 
 	def populate_sku_and_optional_token
