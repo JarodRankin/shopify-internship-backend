@@ -1,13 +1,8 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  token: MyString
-  description: MyString
-  quantity: 1
-  price_cents: 1
+samsung_phone:
+  token: abcdeffff
+  description: A yellow samsung phone
+  quantity: 100
+  price_cents: 128799
 
-two:
-  token: MyString
-  description: MyString
-  quantity: 1
-  price_cents: 1
