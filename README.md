@@ -3,6 +3,9 @@
 
 This inventory manager application is designed to meet the requirements of the Shopify Backend Intern [job application](https://jobs.smartrecruiters.com/Shopify/743999796499290-backend-developer-intern-summer-2022-remote-us-canada-) requirements.
 
+This inventory manager application uses ruby 3.1.0 and rails 7.0.1, [rails setup](https://guides.rubyonrails.org/getting_started.html).
+
+
 ## API Features
 
 - Creation of a Sku
