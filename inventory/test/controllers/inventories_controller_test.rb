@@ -167,6 +167,62 @@ class InventoryControllerTest < ActionDispatch::IntegrationTest
       assert_equal expected_error.stringify_keys, response_error
   end
 
+  test "undo delete sku test" do
+
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    delete "/inventory/sku",
+      params:{token: "abcd"}
+
+    post '/inventory/sku/recover',
+      params:{token: "abcd"}
+
+      response_sku = sku_with_timestamps_removed(JSON.parse(response.body))
+      assert_equal response_sku, mock_sku[:sku].stringify_keys
+  end
+
+  test "undo delete sku test with exepected bad request error" do
+
+    expected_error = {
+      message: "Sku not found for provided token\"",
+      status: "bad_request"
+    }
+
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    delete "/inventory/sku",
+      params:{token: "abcd"}
+
+    post '/inventory/sku/recover',
+      params:{token: "abef"}
+
+      assert_equal 400, status
+
+      response_error = JSON.parse(response.body)
+
+      assert_equal expected_error.stringify_keys, response_error
+  end
+
   private 
 
   def sku_with_timestamps_removed(sku)
