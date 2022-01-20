@@ -5,15 +5,15 @@ This inventory manager application is designed to meet the requirements of the S
 
 This inventory manager application uses ruby 3.1.0 and rails 7.0.1, [rails setup](https://guides.rubyonrails.org/getting_started.html).
 
-To get the program running you can run the following commands from the inventory directory,
-<source ~/.bashrc>
-Chruby 3.1.0
-rake db:migrate
-bin/rails server
+To get the program running you can run the following commands from the inventory directory:  
+<source ~/.bashrc>  
+Chruby 3.1.0  
+rake db:migrate  
+bin/rails server  
 
 bin/rails server will start the server from there you can send API requests to it, routes for each function are found in 
 the routes.rb file. This will prompt the functions to work with sku's in the database's created when we rake our
-database migrations. 
+database migrations.  
 
 I have created some units tests under the file inventories_controller_test.rb, when you run rails test from the inventory directory
 you should expect to get 9 runs, 15 assertions and no errors, failures or skips.
