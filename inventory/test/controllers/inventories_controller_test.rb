@@ -118,7 +118,54 @@ class InventoryControllerTest < ActionDispatch::IntegrationTest
 
   end
 
-  
+  test "delete sku test" do
+
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    delete "/inventory/sku",
+      params:{token: "abcd"}
+
+      assert_equal 204, status
+  end
+
+  test "delete sku test expect bad request error" do
+
+    expected_error = {
+      message: "Sku not found for provided token\"",
+      status: "bad_request"
+    }
+
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    delete "/inventory/sku",
+      params:{token: "abef"}
+
+      assert_equal 400, status
+
+      response_error = JSON.parse(response.body)
+
+      assert_equal expected_error.stringify_keys, response_error
+  end
 
   private 
 
