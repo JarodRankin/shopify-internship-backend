@@ -70,6 +70,55 @@ class InventoryControllerTest < ActionDispatch::IntegrationTest
 
   end
 
+  test "find sku" do
+
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    get "/inventory/sku",
+      params:{token: "abcd"}
+      
+      #Equate without timestamps
+      response_sku = sku_with_timestamps_removed(JSON.parse(response.body))
+      assert_equal response_sku, mock_sku[:sku].stringify_keys
+  end
+
+  test "find sku should fail with error bad request" do
+      expected_error = {
+      message: "Sku not found",
+      status: "bad_request"
+    }
+    mock_sku = {
+      sku: {
+        token: "abcd",
+        description: "a yellow samsung phone",
+        quantity: 10,
+        price_cents: 1000
+      }
+    }
+
+    post "/inventory/sku", 
+      params: { sku: mock_sku[:sku] }
+
+    get "/inventory/sku",
+      params:{token: "abef"}
+
+      response_error = JSON.parse(response.body)
+
+      assert_equal expected_error.stringify_keys, response_error
+
+  end
+
+  
 
   private 
 
